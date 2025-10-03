@@ -1,0 +1,62 @@
+# HAILEI Prometheus Configuration
+# Monitoring configuration for HAILEI system metrics
+
+global:
+  scrape_interval: 15s
+  evaluation_interval: 15s
+
+rule_files:
+  # - "first_rules.yml"
+  # - "second_rules.yml"
+
+scrape_configs:
+  # HAILEI API metrics
+  - job_name: 'hailei-api'
+    static_configs:
+      - targets: ['hailei-api:8000']
+    metrics_path: '/metrics'
+    scrape_interval: 30s
+    scrape_timeout: 10s
+
+  # Redis metrics
+  - job_name: 'redis'
+    static_configs:
+      - targets: ['redis:6379']
+    metrics_path: '/metrics'
+    scrape_interval: 30s
+
+  # PostgreSQL metrics (if using postgres_exporter)
+  - job_name: 'postgres'
+    static_configs:
+      - targets: ['postgres:5432']
+    metrics_path: '/metrics'
+    scrape_interval: 30s
+
+  # Nginx metrics (if using nginx-prometheus-exporter)
+  - job_name: 'nginx'
+    static_configs:
+      - targets: ['nginx:9113']
+    metrics_path: '/metrics'
+    scrape_interval: 30s
+
+  # Node exporter for system metrics
+  - job_name: 'node'
+    static_configs:
+      - targets: ['node-exporter:9100']
+    scrape_interval: 30s
+
+  # Prometheus itself
+  - job_name: 'prometheus'
+    static_configs:
+      - targets: ['localhost:9090']
+
+# Alerting rules (optional)
+alerting:
+  alertmanagers:
+    - static_configs:
+        - targets:
+          # - alertmanager:9093
+
+# Custom recording rules for HAILEI metrics
+rule_files:
+  - "/etc/prometheus/rules/*.yml"

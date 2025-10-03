@@ -1,0 +1,58 @@
+# HAILEI FastAPI Backend Requirements
+# Production-ready dependencies for conversational AI orchestration API
+
+# Core FastAPI and server
+fastapi==0.104.1
+uvicorn[standard]==0.24.0
+websockets==12.0
+
+# Request/Response validation
+pydantic==2.5.0
+pydantic-settings==2.1.0
+
+# Authentication and security
+PyJWT==2.8.0
+bcrypt==4.1.2
+passlib[bcrypt]==1.7.4
+python-jose[cryptography]==3.3.0
+
+# HTTP client and utilities
+httpx==0.25.2
+requests==2.31.0
+
+# Data processing and utilities
+python-multipart==0.0.6
+email-validator==2.1.0
+python-dateutil==2.8.2
+
+# Async and concurrency
+asyncio-mqtt==0.13.0
+aiofiles==23.2.1
+
+# Database (if needed for production)
+# sqlalchemy==2.0.23
+# alembic==1.12.1
+# asyncpg==0.29.0
+
+# Caching and Redis (if needed)
+# redis==5.0.1
+# aioredis==2.0.1
+
+# Monitoring and logging
+structlog==23.2.0
+python-json-logger==2.0.7
+
+# Testing
+pytest==7.4.3
+pytest-asyncio==0.21.1
+pytest-mock==3.12.0
+httpx==0.25.2
+
+# Development tools
+black==23.11.0
+isort==5.12.0
+flake8==6.1.0
+mypy==1.7.1
+
+# OpenAPI documentation
+openapi-spec-validator==0.7.1

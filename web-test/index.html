@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HAILEI Chat - Test Interface</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="app-container">
+        <!-- Header -->
+        <header class="app-header">
+            <h1>🎓 HAILEI Chat</h1>
+            <p>Conversational AI Course Design System</p>
+            <div class="status-indicator" id="status">
+                <span class="status-dot offline"></span>
+                <span id="status-text">Disconnected</span>
+            </div>
+        </header>
+
+        <!-- Course Setup (Initial) -->
+        <div class="setup-container" id="setup-container">
+            <div class="setup-card">
+                <h2>Start Your Course Design</h2>
+                <form id="course-form">
+                    <div class="form-group">
+                        <label for="course-title">Course Title</label>
+                        <input type="text" id="course-title" placeholder="e.g., Introduction to Machine Learning" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="course-level">Level</label>
+                        <select id="course-level" required>
+                            <option value="">Select level...</option>
+                            <option value="beginner">Beginner</option>
+                            <option value="intermediate">Intermediate</option>
+                            <option value="advanced">Advanced</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="course-duration">Duration (weeks)</label>
+                        <input type="number" id="course-duration" min="1" max="52" placeholder="8" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="course-description">Description</label>
+                        <textarea id="course-description" rows="3" 
+                                placeholder="Brief description of what this course will cover..." required></textarea>
+                    </div>
+                    
+                    <button type="submit" class="start-btn">Start Conversation</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- Chat Interface (Hidden initially) -->
+        <div class="chat-container" id="chat-container" style="display: none;">
+            
+            <!-- Agent Status Bar -->
+            <div class="agent-status" id="agent-status">
+                <div class="agent-info">
+                    <span class="agent-icon">🤖</span>
+                    <span class="agent-name" id="active-agent">Coordinator</span>
+                    <span class="agent-role" id="agent-role">Course Planning</span>
+                </div>
+                <div class="session-info">
+                    <span class="session-id" id="session-display">Session: Not started</span>
+                </div>
+            </div>
+
+            <!-- Messages Area -->
+            <div class="messages-container" id="messages-container">
+                <div class="welcome-message">
+                    <div class="agent-avatar">🎓</div>
+                    <div class="message-content">
+                        <strong>Welcome to HAILEI!</strong><br>
+                        I'm your AI course design coordinator. I'll guide you through creating an amazing educational experience 
+                        with help from our specialist agents.
+                    </div>
+                </div>
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-container">
+                <div class="input-wrapper">
+                    <input type="text" id="message-input" placeholder="Type your message..." 
+                           autocomplete="off" disabled>
+                    <button id="send-btn" disabled>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M2,21L23,12L2,3V10L17,12L2,14V21Z"/>
+                        </svg>
+                    </button>
+                </div>
+                
+                <!-- Quick Actions -->
+                <div class="quick-actions" id="quick-actions" style="display: none;">
+                    <button class="quick-btn" onclick="sendQuickMessage('I approve this output')">✅ Approve</button>
+                    <button class="quick-btn" onclick="sendQuickMessage('Can you refine this?')">🔧 Refine</button>
+                    <button class="quick-btn" onclick="sendQuickMessage('Move to next specialist')">➡️ Next Phase</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Connection Status -->
+        <div class="connection-status" id="connection-status" style="display: none;">
+            <span id="connection-message">Connecting...</span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

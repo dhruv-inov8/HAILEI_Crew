@@ -1,0 +1,98 @@
+# HAILEI Docker Ignore File
+# Exclude unnecessary files from Docker build context
+
+# Python cache and bytecode
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+.Python
+*.so
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Virtual environments
+venv/
+env/
+ENV/
+.venv/
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Git
+.git/
+.gitignore
+
+# Docker
+Dockerfile*
+docker-compose*.yml
+.dockerignore
+
+# Logs and temporary files
+logs/
+*.log
+tmp/
+temp/
+
+# Test files
+tests/__pycache__/
+.tox/
+
+# Documentation
+docs/
+*.md
+README*
+
+# Configuration files that shouldn't be in container
+.env
+.env.*
+*.key
+*.pem
+secrets/
+config/secrets/
+
+# Data directories
+data/
+uploads/
+downloads/
+
+# Build artifacts
+build/
+dist/
+*.egg-info/
+
+# Backup files
+*.bak
+*.backup
+*.old
+
+# Large model files (if any)
+*.bin
+*.safetensors
+models/
+weights/
+
+# Node.js (if frontend included)
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Other
+.mypy_cache/
+.dmypy.json
+dmypy.json

@@ -1,0 +1,142 @@
+# Updated tasks.yaml for true hierarchical process with single human interface
+
+coordination_task:
+  description: >
+    As the HAILEI Educational Intelligence Coordinator, delegate work to specialist agents using simple task descriptions.
+    
+    Course Request: {course_request}
+    
+    Delegate these tasks in sequence:
+    
+    1. Delegate to IPDAi: "Create course foundation with learning objectives for Introduction to Artificial Intelligence course using KDKA and PRRR frameworks"
+    
+    2. Delegate to CAuthAi: "Develop instructional content and activities based on the course foundation using PRRR methodology"
+    
+    3. Delegate to TFDAi: "Create LMS technical implementation plan for Canvas platform based on the instructional content" 
+    
+    4. Delegate to EditorAi: "Review and enhance all course materials for quality and accessibility compliance"
+    
+    5. Delegate to EthosAi: "Conduct ethical compliance audit of the complete course using UDL principles"
+    
+    Present results to human for approval at each major milestone. Use simple string descriptions when delegating, not complex objects.
+  expected_output: >
+    Complete coordination summary with human approval confirmations at each stage and final integrated course design package.
+  human_input: true
+  
+instructional_planning_task:
+  description: >
+    As IPDAi, create comprehensive course foundation using HAILEI frameworks:
+    
+    Course Details:
+    - Title: {course_title}
+    - Description: {course_description} 
+    - Credits: {course_credits}
+    - Duration: {course_duration_weeks} weeks
+    - Level: {course_level}
+    - Expectations: {course_expectations}
+    - Modules: {course_modules}
+    
+    REQUIRED FRAMEWORK INPUTS:
+    - KDKA Model: {kdka_model}
+    - PRRR Framework: {prrr_model}
+    
+    Create:
+    1. Refined course title and description (if needed)
+    2. Terminal Learning Objectives (TLOs) using Bloom's Taxonomy Tool
+    3. Enabling Learning Objectives (ELOs) mapped to TLOs
+    4. KDKA structure (Knowledge, Delivery, Context, Assessment)
+    5. Weekly module breakdown for {course_duration_weeks} weeks
+    6. Draft syllabus with PRRR integration
+    
+    Use the Bloom's Taxonomy Tool to validate all learning objectives for appropriate cognitive complexity.
+    If any course details are missing, use educational intelligence to populate them appropriately.
+  expected_output: >
+    Complete course foundation including draft syllabus, validated learning objectives hierarchy,
+    KDKA-structured outline, weekly module plan, and PRRR integration strategy.
+  human_input: false
+
+content_authoring_task:
+  description: >
+    As CAuthAi, develop comprehensive instructional content based on IPDAi's course foundation:
+    
+    Foundation Context: Use the course foundation created by IPDAi
+    PRRR Framework: {prrr_model}
+    
+    Generate for each module:
+    1. PRRR-based learning activities (Personal, Relatable, Relative, Real-world)
+    2. Detailed lecture outlines with key concepts
+    3. Interactive exercises and assignments
+    4. Discussion prompts and collaborative activities
+    5. Assessment rubrics aligned with learning objectives
+    6. Required and supplemental reading lists using Resource Search Tool
+    
+    Use the Resource Search Tool to curate high-quality educational resources for each module.
+    Ensure content progression supports the specified course level and duration.
+  expected_output: >
+    Complete instructional content package with learning activities, assessments,
+    and curated resources for all course modules in structured format.
+  human_input: false
+
+technical_design_task:
+  description: >
+    As TFDAi, create LMS implementation plan for the educational content from CAuthAi:
+    
+    Educational Content Context: Use content created by CAuthAi
+    Target LMS: {lms_platform}
+    
+    Design specifications:
+    1. LMS feature mapping (quizzes, discussions, gradebook, media)
+    2. Navigation structure and user experience flow
+    3. Mobile responsiveness requirements
+    4. Integration needs (SCORM, LTI, external tools)
+    5. Implementation timeline and resource requirements
+    6. Quality assurance and testing protocols
+    
+    Preserve pedagogical integrity while optimizing for platform capabilities.
+    Consider accessibility requirements and Universal Design for Learning principles.
+  expected_output: >
+    Detailed technical implementation plan with LMS specifications,
+    deployment timeline, and integration requirements.
+  human_input: false
+
+content_review_task:
+  description: >
+    As EditorAi, perform comprehensive quality enhancement on all previous agent outputs:
+    
+    Content for Review: All outputs from IPDAi, CAuthAi, and TFDAi
+    
+    Review and enhance:
+    1. Grammar, clarity, and academic tone across all materials
+    2. Accessibility compliance using Accessibility Checker Tool
+    3. Bloom's taxonomy alignment verification using Bloom's Taxonomy Tool
+    4. KDKA framework marker validation
+    5. PRRR principle integration check
+    6. Consistency across all materials and agents' work
+    
+    Use your tools to validate compliance and provide detailed improvement recommendations.
+    Generate comprehensive enhancement log documenting all changes and validations.
+  expected_output: >
+    Polished educational content package with comprehensive editor report
+    documenting all enhancements, tool validations, and compliance checks.
+  human_input: false
+
+ethical_audit_task:
+  description: >
+    As EthosAi, conduct final ethical compliance review on the complete course package:
+    
+    Final Content: All reviewed content from EditorAi
+    
+    Comprehensive ethical audit:
+    1. AI in Education ethical guidelines compliance
+    2. Universal Design for Learning (UDL) verification using Accessibility Checker Tool
+    3. Privacy and data protection assessment
+    4. Bias detection and inclusivity review
+    5. Cultural sensitivity validation
+    6. Academic integrity safeguards
+    
+    Use the Accessibility Checker Tool to validate UDL compliance.
+    Provide final compliance certification or specific remediation requirements.
+  expected_output: >
+    Final ethical audit report with compliance certification and any
+    required modifications for ethical standards adherence.
+  human_input: false
